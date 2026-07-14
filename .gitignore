@@ -1,0 +1,16 @@
+﻿# SSH keys
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs y OS
+*.log
+.DS_Store
+# Credenciales - no subir
+.env
+.env.local
