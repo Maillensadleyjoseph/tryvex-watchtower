@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: watchtower-backend-2
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DB_HOST
+        value: 3.235.93.8
+      - key: DB_PORT
+        value: "6432"
+      - key: DB_NAME
+        value: watchtower
+      - key: DB_USER
+        value: appuser
+      - key: DB_PASSWORD
+        sync: false
+      - key: INSTANCE_NAME
+        value: backend-2
+      - key: PORT
+        value: "3000"
